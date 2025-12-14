@@ -231,7 +231,7 @@ Type	Description	Example
 Internal Threats	Originating within the organization; may involve insider misuse or human error.	An employee leaking sensitive data.
 External Threats	Originating from outside; involve unauthorized access or attacks.	Hackers intercepting network traffic.
 
-🧠 Conclusion
+ Conclusion
 
 The Network Security Model provides a structured and logical approach for secure communication between two parties in a network.
 It ensures that data confidentiality, integrity, and authenticity are preserved throughout transmission.
@@ -239,3 +239,13 @@ It ensures that data confidentiality, integrity, and authenticity are preserved 
 By combining encryption algorithms, security protocols, and key management, this model forms the foundation of modern network security systems such as HTTPS, VPNs, and email encryption.
 
 Understanding this model helps cybersecurity students and professionals design secure systems, analyze vulnerabilities, and implement robust defense mechanisms in any networked environment.
+
+
+
+
+
+
+
+
+
+
