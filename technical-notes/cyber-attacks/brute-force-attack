@@ -1,0 +1,72 @@
+Brute Force Attack
+ Learning Outcomes
+By the end of this lecture, you will be able to:
+1. Understand two main approaches to attacking a conventional encryption scheme.
+2. Explain what a Brute Force Attack is.
+3. Know about software tools used to perform brute force attacks.
+
+  1. Approaches to Attack Conventional Encryption Schemes
+There are two general approaches to attack encryption systems:
+1. Cryptanalysis Attack
+    * Uses mathematical and analytical techniques to find weaknesses in the encryption algorithm or deduce the key.
+2. Brute Force Attack
+    * Tests all possible keys systematically until the correct one is found.
+    * Guaranteed to succeed eventually, but may take a long time.
+
+ 2. What is a Brute Force Attack?
+* A brute force attack is a method of guessing passwords, keys, or encrypted data by trying every possible combination.
+* The attacker does not rely on any cryptographic weakness — it is based purely on computation.
+* Once the correct key or password is found, the encryption can be broken and the data revealed.
+
+ 3. Example – Key Space Concept
+* The key space is the total number of possible keys.
+* The larger the key space → the longer it takes to perform a brute force attack.
+
+Example:
+* Suppose the password consists of only one digit (0–9) → there are 10 possible combinations.
+* If the password length increases to 2 digits, there are 10 × 10 = 100 possible combinations.
+* As the number of characters increases, the number of possible keys grows exponentially.
+
+4. Characteristics of Brute Force Attack
+* Complete Search: Tries all possible keys or passwords.
+* Time-Consuming: The time required depends on:
+    * Key length.
+    * Processing power of the attacker’s system.
+* Guaranteed Success: If given unlimited time and resources, the attack will succeed.
+* Computationally Expensive: Requires high processing power.
+
+5. Tools Used for Brute Force Attacks
+Some common tools available on the internet that can perform brute force attacks include:
+* John the Ripper
+* Hydra
+* Medusa
+* aircrack-ng
+* DaveGrohl
+* cain and abel
+* hashcat
+* rainbowcrack
+* crack
+* Ophcrack
+ 
+
+ 6. How to Prevent Brute Force Attacks
+To defend against brute force attacks:
+1. Use Strong Passwords: Long, complex passwords with letters, numbers, and symbols.
+2. Implement CAPTCHA: Ensures the user is human, not an automated program.
+3. Limit Login Attempts: Restrict number of failed login tries.
+4. Account Lockout Policies: Temporarily lock account after multiple failed attempts.
+5. Two-Factor Authentication (2FA): Adds an extra verification step beyond the password.
+
+ 7. Key Points
+Aspect	Description
+Type of attack	Trial-and-error based
+Target	Passwords or encryption keys
+Success Rate	100% (eventually)
+Limitation	Time and computational power
+Defense	CAPTCHA, complex passwords, limited attempts
+
+Summary
+* A Brute Force Attack systematically tries every possible key or password until the correct one is found.
+* It’s a guaranteed but slow attack method.
+* Tools like John the Ripper and Hydra can automate this process.
+* Protection methods include strong passwords, CAPTCHA, and 2FA.
