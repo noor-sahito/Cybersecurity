@@ -1,0 +1,35 @@
+# ==============================
+# Wireshark Filters – Lab 01
+# Basic Packet Capture & Analysis
+# ==============================
+
+# --- General Traffic ---
+tcp
+udp
+icmp
+
+# --- DNS Traffic ---
+dns
+
+# --- HTTP / HTTPS Traffic ---
+http
+tcp.port == 80
+tcp.port == 443
+
+# --- Local Network Traffic ---
+ip.addr == 192.168.1.1
+ip.addr == 192.168.0.0/16
+
+# --- External Communication ---
+!ip.addr == 192.168.0.0/16
+
+# --- TCP Analysis ---
+tcp.flags.syn == 1
+tcp.flags.ack == 1
+tcp.flags.reset == 1
+
+# --- Packet Size Analysis ---
+frame.len > 1000
+
+# --- MAC Address Filtering ---
+eth.addr == ff:ff:ff:ff:ff:ff
