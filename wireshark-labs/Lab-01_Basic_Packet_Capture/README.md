@@ -48,7 +48,7 @@ ip.addr == 192.168.1.1
 
   
 
-## ✅ Conclusion
+##  Conclusion
 This lab provided hands-on experience with Wireshark and basic packet analysis. 
 It strengthened understanding of how network communication works and how encrypted traffic appears at the packet level.
 
