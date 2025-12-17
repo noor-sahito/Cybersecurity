@@ -2,7 +2,7 @@
 **Basic Packet Capture & Analysis**
 
 
-## 🌐 IP Address Analysis
+## IP Address Analysis
 
 - IP addresses such as `192.168.1.1` and the range `192.168.0.0/16` are **private IP addresses**.
 - These IPs belong to the **local network (LAN)** and are not routable on the public internet.
