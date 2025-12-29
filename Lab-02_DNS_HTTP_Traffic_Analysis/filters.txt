@@ -1,0 +1,23 @@
+# DNS traffic
+dns
+
+# DNS over UDP (standard DNS queries)
+udp.port == 53
+
+# HTTP traffic (unencrypted web traffic)
+http
+
+# HTTP over TCP (port 80)
+tcp.port == 80
+
+# Show only DNS queries
+dns.flags.response == 0
+
+# Show only DNS responses
+dns.flags.response == 1
+
+# HTTP GET requests
+http.request.method == "GET"
+
+# HTTP responses from server
+http.response
