@@ -1,0 +1,46 @@
+# -----------------------------
+# HTTP Traffic (Unencrypted)
+# -----------------------------
+
+# Show all HTTP traffic
+http
+
+# HTTP over TCP (default port)
+tcp.port == 80
+
+# HTTP GET requests
+http.request.method == "GET"
+
+# HTTP responses from server
+http.response
+
+
+# -----------------------------
+# HTTPS / TLS Traffic (Encrypted)
+# -----------------------------
+
+# Show all TLS traffic (HTTPS)
+tls
+
+# HTTPS over TCP (default port)
+tcp.port == 443
+
+# TLS handshake messages
+tls.handshake
+
+# Client Hello (TLS version & cipher suites)
+tls.handshake.type == 1
+
+# Server Hello
+tls.handshake.type == 2
+
+
+# -----------------------------
+# Comparison Filters
+# -----------------------------
+
+# HTTP OR HTTPS traffic
+http || tls
+
+# Exclude DNS traffic (focus only on web traffic)
+!(dns)
