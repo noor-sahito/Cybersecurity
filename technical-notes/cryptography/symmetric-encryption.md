@@ -13,7 +13,7 @@ In modern security systems, symmetric encryption is primarily used **after a sec
 3. Receiver decrypts ciphertext using the **same secret key**
 4. Original plaintext is recovered
 
-⚠️ Both parties **must securely share the key** before communication begins.
+ Both parties **must securely share the key** before communication begins.
 
 ---
 
