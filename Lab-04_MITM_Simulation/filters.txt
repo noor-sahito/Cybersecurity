@@ -1,0 +1,73 @@
+# ==============================
+# Lab-04: MITM Simulation
+# Wireshark Display Filters
+# ==============================
+
+# ------------------------------
+# HTTP Traffic (Unencrypted)
+# ------------------------------
+http
+
+# Show HTTP requests only
+http.request
+
+# Show HTTP responses only
+http.response
+
+# Show HTTP credentials (if present)
+http.authorization
+
+# ------------------------------
+# HTTPS / TLS Traffic
+# ------------------------------
+tls
+
+# TLS handshake messages
+tls.handshake
+
+# Client Hello (start of TLS handshake)
+tls.handshake.type == 1
+
+# Server Hello
+tls.handshake.type == 2
+
+# TLS certificates
+tls.handshake.certificate
+
+# Encrypted application data
+tls.app_data
+
+# ------------------------------
+# TCP Ports
+# ------------------------------
+# HTTP port
+tcp.port == 80
+
+# HTTPS port
+tcp.port == 443
+
+# ------------------------------
+# MITM Analysis Filters
+# ------------------------------
+# Possible plaintext credentials
+frame contains "password"
+frame contains "username"
+frame contains "login"
+
+# Detect redirections (possible downgrade attempts)
+http.response.code == 301
+http.response.code == 302
+
+# Mixed HTTP and HTTPS traffic
+http || tls
+
+# ------------------------------
+# DNS (Optional – MITM Context)
+# ------------------------------
+dns
+
+# DNS queries only
+dns.flags.response == 0
+
+# DNS responses only
+dns.flags.response == 1
