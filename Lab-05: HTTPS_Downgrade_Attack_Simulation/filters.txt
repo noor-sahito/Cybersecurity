@@ -1,0 +1,74 @@
+# Lab-05: HTTPS Downgrade Attack Simulation
+# Wireshark Display Filters
+
+# -----------------------------
+# Basic HTTP Traffic (Unencrypted)
+# -----------------------------
+http
+
+# -----------------------------
+# HTTPS / TLS Traffic
+# -----------------------------
+tls
+ssl
+
+# -----------------------------
+# HTTP Requests on Port 80
+# Indicates potential downgrade targets
+# -----------------------------
+tcp.port == 80
+
+# -----------------------------
+# HTTPS Traffic on Port 443
+# Secure communication baseline
+# -----------------------------
+tcp.port == 443
+
+# -----------------------------
+# HTTP Redirect Responses
+# Look for 301 / 302 redirects
+# -----------------------------
+http.response.code == 301 || http.response.code == 302
+
+# -----------------------------
+# HTTP Requests (Methods)
+# Useful for spotting plaintext activity
+# -----------------------------
+http.request.method == "GET"
+http.request.method == "POST"
+
+# -----------------------------
+# Detect Missing HTTPS Enforcement
+# HTTP traffic without redirect to HTTPS
+# -----------------------------
+http && !(http.response.code == 301 || http.response.code == 302)
+
+# -----------------------------
+# TLS Handshake Messages
+# Confirms HTTPS establishment
+# -----------------------------
+tls.handshake
+
+# -----------------------------
+# TLS Client Hello
+# Shows TLS version and cipher negotiation
+# -----------------------------
+tls.handshake.type == 1
+
+# -----------------------------
+# TLS Server Hello
+# Confirms server-side encryption support
+# -----------------------------
+tls.handshake.type == 2
+
+# -----------------------------
+# Encrypted Application Data
+# Payload should be unreadable
+# -----------------------------
+tls.app_data
+
+# -----------------------------
+# Combined View: HTTP vs HTTPS
+# Useful for side-by-side comparison
+# -----------------------------
+http || tls
