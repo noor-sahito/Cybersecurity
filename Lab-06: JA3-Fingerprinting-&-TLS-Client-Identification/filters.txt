@@ -1,0 +1,53 @@
+# Lab-06: JA3 Fingerprinting
+# Wireshark Display Filters
+
+# -----------------------------
+# TLS Traffic
+# -----------------------------
+tls
+
+# -----------------------------
+# TLS Handshake Messages
+# -----------------------------
+tls.handshake
+
+# -----------------------------
+# TLS Client Hello
+# (JA3 fingerprint is based on this)
+# -----------------------------
+tls.handshake.type == 1
+
+# -----------------------------
+# TLS Server Hello
+# -----------------------------
+tls.handshake.type == 2
+
+# -----------------------------
+# TLS over HTTPS (Port 443)
+# -----------------------------
+tcp.port == 443
+
+# -----------------------------
+# TLS Cipher Suites
+# -----------------------------
+tls.handshake.ciphersuite
+
+# -----------------------------
+# TLS Extensions
+# -----------------------------
+tls.handshake.extensions
+
+# -----------------------------
+# Supported Groups (Elliptic Curves)
+# -----------------------------
+tls.handshake.extensions_supported_group
+
+# -----------------------------
+# Signature Algorithms
+# -----------------------------
+tls.handshake.sig_hash_alg
+
+# -----------------------------
+# Compare All TLS Handshakes
+# -----------------------------
+tls.handshake.type == 1 || tls.handshake.type == 2
